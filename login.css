@@ -1,0 +1,88 @@
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+}
+
+div.headSection{
+	border: 3px solid #f1f1f1;
+	padding: 10px;
+	margin: 70px 0px 0px 0px;
+}
+
+div.loginPanel{
+    border: solid black;
+}
+
+div.fairChartSection{
+	text-align: center;
+	margin: -450px 0px 0px 400px;
+	padding: 0px 0px 0px 200px;
+	width: 150%;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 300px;
+	padding: 8px 12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Input buttons section */
+input.i1{
+	margin: 8px 8px 8px 12px;
+}
+input.i2{
+	margin: 8px 8px 8px 12px;
+}
+
+/* Set a style for all buttons */
+button.loginButton{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 10px 8px 62px;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+}
+
+button.signUpButton{
+	background-color: red;
+	color: white;
+	padding: 10px 15px;
+	margin: 5px 8px 8px 130px;
+	border: none;
+	cursor: pointer;
+	width: 200px;
+}
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Center the avatar image inside this container */
+div.imgContainer {
+    text-align: center;
+    margin-left:28px;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 100px;
+    border-radius: 200px;
+	margin: 18px 20px 0px -10px;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 15px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: left;
+    padding-top: 0px;
+}
+

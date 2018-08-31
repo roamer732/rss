@@ -1,0 +1,168 @@
+			@import url('https://fonts.googleapis.com/css?family=Jua|Roboto');
+			.containerSelect {
+				display: block;
+				position: relative;
+				padding-left: 35px;
+				cursor: pointer;
+				font-size: 15px;
+				margin-left:15px;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			.containerSelect input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+			}
+
+			.checkmark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 20px;
+				width: 20px;
+				background-color: #eee;
+			}
+
+			.containerSelect:hover input ~ .checkmark {
+				background-color: #ccc;
+			}
+
+			.containerSelect input:checked ~ .checkmark {
+				background-color: #2196F3;
+			}
+
+			.checkmark:after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+
+			.containerSelect input:checked ~ .checkmark:after {
+				display: block;
+			}
+
+			.containerSelect .checkmark:after {
+				left: 9px;
+				top: 5px;
+				width: 5px;
+				height: 10px;
+				border: solid white;
+				border-width: 0 3px 3px 0;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+
+			label{
+				margin-bottom:-19px;
+			}
+			.wel{
+				background-color:red;
+			}
+			
+			.classField{
+				margin: -28px 0px 0px 262px;
+				width:255px;
+				padding:6px 40px;
+				position: absolute;
+				border-radius:4px;
+				border: 1px solid #ccc;
+				display: none;
+				box-sizing: border-box;
+			}
+			
+			.statClass{
+				border-style:groove;
+				z-index:2;
+				position:absolute;
+				margin-left: 201px;
+				padding-left:8px;
+				background-color:white;
+				display:none;
+				width:249px
+			}
+			
+			#haltId{
+				position:absolute;
+				padding: 0px 0px 0px 7px;
+				margin: -8px 0px 0px 9px;
+				width:25px;
+			}
+			
+			#routeStatId{
+				position:absolute;
+				padding: 0px 0px 0px 5px;
+				margin: -8px 0px 0px 37px;
+				width:95px;
+			}
+			
+			#routeStatNameId{
+				position:absolute;
+				padding: 0px 0px 0px 4px;
+				margin: -8px 0px 0px 135px;
+				width:97px;
+			}
+			
+			#routeArrTimeId{
+				position:absolute;
+				padding: 0px 0px 0px 7px;
+				margin:-8px 0px 0px 235px;
+				width:105px;
+			}
+			
+			#routeDepartTimeId{
+				position:absolute;
+				padding: 0px 0px 0px 3px;
+				margin:-8px 0px 0px 343px;
+				width:126px;
+			}
+			
+			#distId{
+				position:absolute;
+				padding:0px 0px 0px 9px;
+				margin: -8px 0px 0px 473px;
+				width:87px;
+			}
+			
+			.statCodeResult:hover{
+				background-color:yellow;
+				padding-right:200px;
+			}
+			
+			.form-control{
+				margin-top:-33px;
+				margin-left:200px;
+				width:250px;
+			}
+			
+			#hrId{
+				margin:10px 0px;
+			}
+			
+			.classCoachNum{
+				padding-left:0px;
+				margin-left:0px;
+				font-size:0px;
+			}
+			
+			#dayId{
+				padding:0px 39px;
+				margin: -3px 14px;
+			}
+			
+			#resetArr{
+				display:block;
+				font-size:24px;
+				margin:0px 0px 0px 0px;
+				position:absolute;
+			}
+			#resetDep{
+				display:none;
+				font-size:24px;
+				margin:0px 0px 0px 0px;
+				position:absolute;
+			}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Registration</title>
+	<style type="text/css">
+		#success_message{ display: none;}
+	</style>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Boostrap Validator</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+<script>
+     
+   function getAge(dateString) 
+    {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        age--;
+    }
+    return age;
+  }
+console.log('age: ' + getAge("1980/08/10"));
+  function validation()
+  {
+    var username=document.getElementById('username').value;
+    var fname=document.getElementById("fname").value;
+    var mname=document.getElementById("mname").value;
+    var lname=document.getElementById("lname").value;
+    var dob=document.getElementById("dob").value;
+    var contact=document.getElementById("contact").value;
+    var city=document.getElementById("city").value;
+    var pin_code=document.getElementById("pin").value;
+    var pass=document.getElementById('pass').value;
+    var confpassword=document.getElementById('conpass').value;
+   
+   
+    if(pass!=confpassword)
+    {
+      document.getElementById('conpassw').innerHTML="**password does not match";
+      return false;
+    }
+
+    if(!isNaN(fname))
+    {
+      document.getElementById("first").innerHTML="**Numbers are not alloewed";
+      return false;
+    }
+    if(!isNaN(mname))
+    {
+      document.getElementById("middle").innerHTML="**Numbers are not alloewed";
+      return false;
+    }
+    if(!isNaN(lname))
+    {
+      document.getElementById("last").innerHTML="**Numbers are not alloewed";
+      return false;
+    }
+  
+    if((getAge(dob)<18)||(getAge(dob)>100))
+    {
+      document.getElementById("birth").innerHTML="**age must be greater than 18 and less than 100";
+      alert(getAge(dob));
+      return false;
+    }
+    if(isNaN(contact))
+    {
+      document.getElementById("number").innerHTML="**Contact Number is not valid";
+      return false;
+    }
+    if(isNan(pin_code))
+    {
+      document.getElementById("code").innerHTML="**Pin code is not valid";
+      return false;
+    }
+    if(!isNaN(city))
+    {
+      document.getElementById("citi").innerHTML="**Numbers are not alloewed in the city name";
+      return false;
+    }
+
+	</script>
+	 
+</head>
+<body>
+    <div class="container">
+
+    <form class="well form-horizontal" action="" method="post"  id="contact_form" onsubmit="return validation()">
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+  
+  <div class="form-group">
+  <label class="col-md-4 control-label">Username</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="username" placeholder="Username" class="form-control"  type="text" id="username" required="true" autocomplete="off" minlength="2" maxlength="10">
+  <span id="user" class="text-danger font-weight-bold"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input name="password" placeholder="Password" class="form-control"  type="text" id="pass" required="true" autocomplete="off" minlength="6" maxlength="10">
+   <span id="passw"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Confirm Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input name="confpassword" placeholder="Confirm Password" class="form-control" id="conpass"  type="text" required="true">
+   <span id="conpassw"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+  
+
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="firstname" placeholder="First Name" class="form-control"  type="text" id="fname" required="true" autocomplete="off" minlength="2" maxlength="20">
+   <span id="first"></span>
+    </div>
+  </div>
+</div>
+  
+  <!--Text input-->
+  <div class="form-group">
+  <label class="col-md-4 control-label">Middle Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="middlename" placeholder="Middle Name" class="form-control" id="mname"  type="text" autocomplete="off" maxlength="20">
+   <span id="middle"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="lastname" placeholder="Last Name" class="form-control" id="lname"  type="text" autocomplete="off" minlength="2" maxlength="20">
+   <span id="last"></span>
+    </div>
+  </div>
+</div>
+
+  <div class="form-group"> 
+  <label class="col-md-4 control-label">Gender</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="gender" class="form-control selectpicker" id="gender" required="true">
+      <option value="">Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="transgender">Transgender</option>
+    </select>
+     <span id="gen"></span>
+  </div>
+</div>
+</div>
+  
+  <div class="form-group">
+  <label class="col-md-4 control-label" >Date Of Birth</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+  <input name="dob" type="date" placeholder="Date Of Birth" class="form-control" id="dob" autocomplete="off" required="true">
+   <span id="birth"></span>
+    </div>
+  </div>
+</div>
+  
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="email" id="mail" autocomplete="off" required="true">
+   <span id="mails"></span>
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Contact No.</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="contact_no" placeholder="Contact Number" class="form-control" type="text" id="contact" autocomplete="off" required="true" minlength="10">
+   <span id="number" class="text-danger font-weight-bold"></span>
+    </div>
+  </div>
+</div>
+  
+
+<!--text input-->
+  <div class="form-group">
+  <label class="col-md-4 control-label" >City</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="city" placeholder="City" class="form-control"  type="text" min=2 max=20 required="true" id="city" autocomplete="off" minlength="2" maxlength="20">>
+   <span id="citi" class="text-danger font-weight-bold"></span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Pin Code</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="pin" placeholder="Pin Code" class="form-control" type="text" min=6 max=6 id="pin" autocomplete="off" required="true" minlength="6" maxlength="6">>
+   <span id="code" class="text-danger font-weight-bold"></span>
+    </div>
+  </div>
+</div>
+ <!--input state-->
+  <div class="form-group"> 
+  <label class="col-md-4 control-label">State</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+    <select name="state" class="form-control selectpicker" required="true" id="state" required="true">
+      <option value="">State</option>
+      <option>Andhra Pradesh</option>
+      <option>Arunachal Pradesh</option>
+      <option>Assam</option>
+      <option>Bihar</option>
+      <option>Chhattisgarh</option>
+      <option>Goa</option>
+      <option>Gujarat</option>
+      <option>Haryana</option>
+      <option>Himachal Pradesh</option>
+      <option>Jammu and Kashmir</option>
+      <option>Jharkhand</option>
+      <option>Karnataka</option>
+      <option>Kerala</option>
+      <option>Madhya Pradesh</option>
+      <option>Maharashtra</option>
+      <option>Manipur</option>
+      <option>Meghalaya</option>
+      <option>Mizoram</option>
+      <option>Nagaland</option>
+      <option>Odisha</option>
+      <option>Punjab </option>
+      <option>Rajasthan </option>
+      <option>Sikkim </option>
+      <option>Tamil Nadu </option>
+      <option>Telangana </option>
+      <option>Tripura </option>
+      <option>Uttarakhand </option>
+      <option>Uttar Pradesh </option>
+      <option>West Bengal </option>
+      <option>Andaman and Nicobar Islands</option>
+      <option>Chandigarh </option>
+      <option>Dadra and Nagar Haveli </option>
+      <option>Daman and Diu </option>
+      <option>Delhi </option>
+      <option>Lakshadweep </option>
+      <option>Puducherry</option>
+    </select>
+     <span id="prant"></span>
+  </div>
+</div>
+</div>
+<!-- Select Basic -->
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+
+
+</body>
+</html>
